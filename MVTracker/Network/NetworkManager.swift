@@ -32,18 +32,25 @@ struct NetworkManager {
                     return
                 }
                 
-                if let data,
-                    let musicData = try? JSONDecoder().decode(Music.self, from: data) {
-                    print(musicData)
+                guard let data else {
+                    observer.onError(APIError.unknownResponse)
+                    return
+                }
+                
+                do {
+                    let musicData = try JSONDecoder().decode(Music.self, from: data)
                     observer.onNext(musicData)
                     observer.onCompleted()
-                } else {
+                } catch {
                     print("응답 O, 디코딩 실패")
+                    print(error)
                     observer.onError(APIError.unknownResponse)
                 }
             }.resume()
             return Disposables.create()
-        }
+            
+        }.catch { _ in return Observable.empty() }
+        
         return resultObservable
     }
 }

@@ -13,12 +13,12 @@ struct Music: Decodable {
 }
 
 struct MusicInfo: Decodable {
-    let artistID, trackID: Int
+    let artistId, trackId: Int
     let artistName, trackName: String
     let artistViewUrl, trackViewUrl: String
     let previewUrl: String //MV .m4v
     let artworkUrl100: String
-    let releaseDate: Date
+    let releaseDate: String
     let trackTimeMillis: Int
     let primaryGenreName: String
 }
