@@ -10,6 +10,7 @@ import Kingfisher
 import RxSwift
 import SnapKit
 import Then
+import AVFoundation
 
 final class SearchTableViewCell: UITableViewCell {
     static let identifier = "SearchTableViewCell"
@@ -49,6 +50,9 @@ final class SearchTableViewCell: UITableViewCell {
         $0.tintColor = .systemPink.withAlphaComponent(0.5)
     }
     
+    private var player: AVPlayer?
+    private var playerLayer: AVPlayerLayer?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureView()
@@ -60,6 +64,10 @@ final class SearchTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
+        player?.pause()
+        playerLayer?.removeFromSuperlayer()
+        player = nil
+        playerLayer = nil
     }
 }
 
@@ -68,8 +76,12 @@ extension SearchTableViewCell {
         titleLabel.text = "  \(data.trackName)  "
         artistLabel.text = "- \(data.artistName)"
         timeLabel.text = formatTime(millis: data.trackTimeMillis)
-        let url = URL(string: data.artworkUrl100)
-        musicVideoImageView.kf.setImage(with: url)
+//        let url = URL(string: data.artworkUrl100)
+//        musicVideoImageView.kf.setImage(with: url)
+        
+        if let videoURL = URL(string: data.previewUrl) {
+            playVideo(url: videoURL)
+        }
     }
     func setupLikeButton(_ isLike: Bool) {
         let imageName = isLike ? "hand.thumbsup.fill" : "hand.thumbsup"
@@ -82,6 +94,19 @@ extension SearchTableViewCell {
         let minutes = totalSeconds / 60
         let seconds = totalSeconds % 60
         return String(format: " %02d:%02d ", minutes, seconds)
+    }
+    
+    private func playVideo(url: URL) {
+        player = AVPlayer(url: url)
+        player?.volume = 0
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer?.frame = musicVideoImageView.bounds
+        playerLayer?.videoGravity = .resizeAspectFill
+        
+        if let playerLayer {
+            musicVideoImageView.layer.insertSublayer(playerLayer, at: 0)
+        }
+        player?.play()
     }
 }
 
