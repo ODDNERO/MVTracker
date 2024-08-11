@@ -16,7 +16,6 @@
 		CE4602062C64D7E600B9355C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE4602052C64D7E600B9355C /* RxCocoa */; };
 		CE4602082C64D7E600B9355C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4602072C64D7E600B9355C /* RxSwift */; };
 		CE46020B2C64D7F300B9355C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE46020A2C64D7F300B9355C /* SnapKit */; };
-		CE46020E2C64D80400B9355C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE46020D2C64D80400B9355C /* Alamofire */; };
 		CE4602112C64D82300B9355C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE4602102C64D82300B9355C /* Kingfisher */; };
 		CE4602132C64DD9A00B9355C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602122C64DD9A00B9355C /* SearchView.swift */; };
 		CE4602162C64DFC400B9355C /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602152C64DFC400B9355C /* TrackTableViewCell.swift */; };
@@ -26,6 +25,7 @@
 		CE4602232C68B0EC00B9355C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602222C68B0EC00B9355C /* TabBarController.swift */; };
 		CE4602262C68B4DC00B9355C /* MyTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602252C68B4DC00B9355C /* MyTracksViewController.swift */; };
 		CE4602292C68DBFF00B9355C /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602282C68DBFF00B9355C /* TrackDetailViewController.swift */; };
+		CE4602332C691A9A00B9355C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4602322C691A9A00B9355C /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4602112C64D82300B9355C /* Kingfisher in Frameworks */,
-				CE46020E2C64D80400B9355C /* Alamofire in Frameworks */,
+				CE4602332C691A9A00B9355C /* RealmSwift in Frameworks */,
 				CE4602082C64D7E600B9355C /* RxSwift in Frameworks */,
 				CE46020B2C64D7F300B9355C /* SnapKit in Frameworks */,
 				CE4602062C64D7E600B9355C /* RxCocoa in Frameworks */,
@@ -169,8 +169,8 @@
 				CE4602052C64D7E600B9355C /* RxCocoa */,
 				CE4602072C64D7E600B9355C /* RxSwift */,
 				CE46020A2C64D7F300B9355C /* SnapKit */,
-				CE46020D2C64D80400B9355C /* Alamofire */,
 				CE4602102C64D82300B9355C /* Kingfisher */,
+				CE4602322C691A9A00B9355C /* RealmSwift */,
 			);
 			productName = MVTracker;
 			productReference = CE4601EA2C64D58200B9355C /* MVTracker.app */;
@@ -204,8 +204,8 @@
 				CE4602012C64D7C600B9355C /* XCRemoteSwiftPackageReference "Then" */,
 				CE4602042C64D7E600B9355C /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CE4602092C64D7F300B9355C /* XCRemoteSwiftPackageReference "SnapKit" */,
-				CE46020C2C64D80400B9355C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CE46020F2C64D82300B9355C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CE4602312C691A9A00B9355C /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = CE4601EB2C64D58200B9355C /* Products */;
 			projectDirPath = "";
@@ -490,20 +490,20 @@
 				minimumVersion = 5.7.1;
 			};
 		};
-		CE46020C2C64D80400B9355C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
 		CE46020F2C64D82300B9355C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.12.0;
+			};
+		};
+		CE4602312C691A9A00B9355C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.52.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -529,15 +529,15 @@
 			package = CE4602092C64D7F300B9355C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		CE46020D2C64D80400B9355C /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE46020C2C64D80400B9355C /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		CE4602102C64D82300B9355C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE46020F2C64D82300B9355C /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		CE4602322C691A9A00B9355C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE4602312C691A9A00B9355C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
