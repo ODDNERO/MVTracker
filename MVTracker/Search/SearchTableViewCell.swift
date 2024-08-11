@@ -22,25 +22,27 @@ final class SearchTableViewCell: UITableViewCell {
         $0.clipsToBounds = true
     }
     let titleLabel = UILabel().then {
-        $0.text = "  White Noise  " //임시
-        $0.textColor = .systemPink
+//        $0.textColor = .systemPink
+        $0.textColor = .black
         $0.textAlignment = .left
-        $0.font = .systemFont(ofSize: 17, weight: .semibold)
-        $0.backgroundColor = .white
+//        $0.font = .systemFont(ofSize: 15, weight: .semibold)
+        $0.font = .systemFont(ofSize: 15, weight: .medium)
+        $0.backgroundColor = .white.withAlphaComponent(0.95)
         $0.layer.cornerRadius = 12
         $0.clipsToBounds = true
     }
     let artistLabel = UILabel().then {
-        $0.text = "- OFFICIAL HIGE DANDISM" //임시
-        $0.textColor = .systemGray4
+        $0.textColor = .systemGray
         $0.textAlignment = .left
-        $0.font = .systemFont(ofSize: 15, weight: .medium)
+        $0.font = .systemFont(ofSize: 15, weight: .regular)
     }
     let timeLabel = UILabel().then {
-        $0.text = "4:14" //임시
         $0.textColor = .white
-        $0.textAlignment = .right
-        $0.font = .systemFont(ofSize: 14, weight: .regular)
+        $0.textAlignment = .left
+        $0.font = .systemFont(ofSize: 13, weight: .regular)
+        $0.backgroundColor = .black.withAlphaComponent(0.3)
+        $0.layer.cornerRadius = 10
+        $0.clipsToBounds = true
     }
     let likeButton = UIButton().then {
         $0.setImage(UIImage(systemName: "hand.thumbsup"), for: .normal)
@@ -66,7 +68,7 @@ extension SearchTableViewCell {
     func setupData(_ data: MusicInfo) {
         titleLabel.text = "  \(data.trackName)  "
         artistLabel.text = "- \(data.artistName)"
-        timeLabel.text = "\(data.trackTimeMillis)"
+        timeLabel.text = formatTime(millis: data.trackTimeMillis)
         let url = URL(string: data.artworkUrl100)
         musicVideoImageView.kf.setImage(with: url)
     }
@@ -76,18 +78,29 @@ extension SearchTableViewCell {
         likeButton.tintColor = isLike ? .systemPink : .systemPink.withAlphaComponent(0.5)
     }
     
+    func formatTime(millis: Int) -> String {
+        let totalSeconds = millis / 1000
+        let minutes = totalSeconds / 60
+        let seconds = totalSeconds % 60
+        return String(format: " %02d:%02d ", minutes, seconds)
+    }
+}
+
+extension SearchTableViewCell {
     private func configureView() {
         self.selectionStyle = .none
         
         [musicVideoImageView, artistLabel, likeButton].forEach { contentView.addSubview($0) }
+        [titleLabel, timeLabel].forEach { musicVideoImageView.addSubview($0) }
         [titleLabel, timeLabel].forEach { musicVideoImageView.bringSubviewToFront($0) }
         
         musicVideoImageView.snp.makeConstraints {
+            $0.top.equalTo(contentView).inset(10)
             $0.top.horizontalEdges.equalTo(contentView).inset(20)
-            $0.height.equalTo(200)
+            $0.height.equalTo(220)
         }
         artistLabel.snp.makeConstraints {
-            $0.centerY.equalTo(likeButton).offset(2)
+            $0.centerY.equalTo(likeButton).offset(1)
             $0.leading.equalTo(contentView).inset(30)
             $0.trailing.equalTo(likeButton.snp.leading).offset(-10)
         }
@@ -98,11 +111,12 @@ extension SearchTableViewCell {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.leading.equalTo(musicVideoImageView).inset(12)
+            $0.top.leading.equalTo(musicVideoImageView).inset(10)
             $0.height.equalTo(24)
         }
         timeLabel.snp.makeConstraints {
             $0.bottom.trailing.equalTo(musicVideoImageView).inset(12)
+            $0.height.equalTo(20)
         }
     }
 }

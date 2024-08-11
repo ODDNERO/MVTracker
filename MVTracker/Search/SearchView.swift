@@ -23,10 +23,9 @@ final class SearchView: UIView {
     let tableView = UITableView().then {
         $0.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
         $0.backgroundColor = .clear
-        $0.separatorStyle = .singleLine
-        $0.separatorColor = .systemPink.withAlphaComponent(0.4)
+        $0.separatorStyle = .none
         $0.showsVerticalScrollIndicator = true
-        $0.rowHeight = 200
+        $0.rowHeight = 270
     }
     
     override init(frame: CGRect) {
