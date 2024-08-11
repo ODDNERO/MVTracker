@@ -21,6 +21,7 @@
 		CE4602132C64DD9A00B9355C /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602122C64DD9A00B9355C /* SearchView.swift */; };
 		CE4602162C64DFC400B9355C /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602152C64DFC400B9355C /* SearchTableViewCell.swift */; };
 		CE46021A2C64E33900B9355C /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602192C64E33900B9355C /* Music.swift */; };
+		CE4602212C6786A800B9355C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602202C6786A800B9355C /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CE4602122C64DD9A00B9355C /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CE4602152C64DFC400B9355C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		CE4602192C64E33900B9355C /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		CE4602202C6786A800B9355C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				CE4601ED2C64D58200B9355C /* AppDelegate.swift */,
 				CE4601EF2C64D58200B9355C /* SceneDelegate.swift */,
 				CE4601F12C64D58200B9355C /* ViewController.swift */,
+				CE46021B2C64E34400B9355C /* Network */,
 				CE4602142C64DDA300B9355C /* Search */,
 				CE4601F62C64D58400B9355C /* Assets.xcassets */,
 				CE4601F82C64D58400B9355C /* LaunchScreen.storyboard */,
@@ -96,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4602192C64E33900B9355C /* Music.swift */,
+				CE4602202C6786A800B9355C /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -188,6 +192,7 @@
 				CE4601F22C64D58200B9355C /* ViewController.swift in Sources */,
 				CE4602132C64DD9A00B9355C /* SearchView.swift in Sources */,
 				CE4601EE2C64D58200B9355C /* AppDelegate.swift in Sources */,
+				CE4602212C6786A800B9355C /* NetworkManager.swift in Sources */,
 				CE46021A2C64E33900B9355C /* Music.swift in Sources */,
 				CE4601F02C64D58200B9355C /* SceneDelegate.swift in Sources */,
 				CE4602162C64DFC400B9355C /* SearchTableViewCell.swift in Sources */,
