@@ -11,7 +11,8 @@ import Then
 
 final class SearchView: UIView {
     let searchController = UISearchController(searchResultsController: nil).then {
-        $0.searchBar.placeholder = " 💿 노래 제목 or 아티스트 검색하기"
+        $0.searchBar.placeholder = " 노래 제목 or 아티스트 검색하기 💿"
+        $0.searchBar.tintColor = .systemPink
         $0.searchBar.searchBarStyle = .prominent
         $0.searchBar.autocorrectionType = .no
         $0.searchBar.autocapitalizationType = .none
