@@ -27,6 +27,7 @@
 		CE4602292C68DBFF00B9355C /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602282C68DBFF00B9355C /* TrackDetailViewController.swift */; };
 		CE4602302C691A3B00B9355C /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46022F2C691A3B00B9355C /* Track.swift */; };
 		CE4602332C691A9A00B9355C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4602322C691A9A00B9355C /* RealmSwift */; };
+		CE4602352C691BF800B9355C /* TrackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602342C691BF800B9355C /* TrackRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CE4602252C68B4DC00B9355C /* MyTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTracksViewController.swift; sourceTree = "<group>"; };
 		CE4602282C68DBFF00B9355C /* TrackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
 		CE46022F2C691A3B00B9355C /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		CE4602342C691BF800B9355C /* TrackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				CE46022F2C691A3B00B9355C /* Track.swift */,
+				CE4602342C691BF800B9355C /* TrackRepository.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4602352C691BF800B9355C /* TrackRepository.swift in Sources */,
 				CE4602262C68B4DC00B9355C /* MyTracksViewController.swift in Sources */,
 				CE4602182C64E1D800B9355C /* SearchViewModel.swift in Sources */,
 				CE4602292C68DBFF00B9355C /* TrackDetailViewController.swift in Sources */,
