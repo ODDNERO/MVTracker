@@ -15,6 +15,7 @@ final class SearchViewModel {
     struct Input {
         let searchText: ControlProperty<String?>
         let searchButtonTap: ControlEvent<Void>
+        let cancleButtonTap: ControlEvent<Void>
     }
     struct Output {
         let musicInfoList: PublishSubject<[MusicInfo]>
@@ -47,6 +48,11 @@ extension SearchViewModel {
             } onDisposed: { owner in
                 print("Disposed")
             }.disposed(by: disposeBag)
+        
+        input.cancleButtonTap
+            .map { [] }
+            .bind(to: musicInfoList)
+            .disposed(by: disposeBag)
         
         return Output(musicInfoList: musicInfoList,
                       isLike: isLike)
