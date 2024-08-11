@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE4601EE2C64D58200B9355C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4601ED2C64D58200B9355C /* AppDelegate.swift */; };
 		CE4601F02C64D58200B9355C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4601EF2C64D58200B9355C /* SceneDelegate.swift */; };
-		CE4601F22C64D58200B9355C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4601F12C64D58200B9355C /* ViewController.swift */; };
 		CE4601F72C64D58400B9355C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4601F62C64D58400B9355C /* Assets.xcassets */; };
 		CE4601FA2C64D58400B9355C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE4601F92C64D58400B9355C /* Base */; };
 		CE4602032C64D7C600B9355C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = CE4602022C64D7C600B9355C /* Then */; };
@@ -22,13 +21,14 @@
 		CE4602162C64DFC400B9355C /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602152C64DFC400B9355C /* SearchTableViewCell.swift */; };
 		CE46021A2C64E33900B9355C /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602192C64E33900B9355C /* Music.swift */; };
 		CE4602212C6786A800B9355C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602202C6786A800B9355C /* NetworkManager.swift */; };
+		CE4602232C68B0EC00B9355C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602222C68B0EC00B9355C /* TabBarController.swift */; };
+		CE4602262C68B4DC00B9355C /* MyTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602252C68B4DC00B9355C /* MyTracksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE4601EA2C64D58200B9355C /* MVTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4601ED2C64D58200B9355C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4601EF2C64D58200B9355C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE4601F12C64D58200B9355C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE4601F62C64D58400B9355C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4601F92C64D58400B9355C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE4601FB2C64D58400B9355C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		CE4602152C64DFC400B9355C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		CE4602192C64E33900B9355C /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		CE4602202C6786A800B9355C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CE4602222C68B0EC00B9355C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		CE4602252C68B4DC00B9355C /* MyTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTracksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +78,10 @@
 			children = (
 				CE4601ED2C64D58200B9355C /* AppDelegate.swift */,
 				CE4601EF2C64D58200B9355C /* SceneDelegate.swift */,
-				CE4601F12C64D58200B9355C /* ViewController.swift */,
+				CE4602222C68B0EC00B9355C /* TabBarController.swift */,
 				CE46021B2C64E34400B9355C /* Network */,
 				CE4602142C64DDA300B9355C /* Search */,
+				CE4602242C68B4C300B9355C /* MyTracks */,
 				CE4601F62C64D58400B9355C /* Assets.xcassets */,
 				CE4601F82C64D58400B9355C /* LaunchScreen.storyboard */,
 				CE4601FB2C64D58400B9355C /* Info.plist */,
@@ -102,6 +105,14 @@
 				CE4602202C6786A800B9355C /* NetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CE4602242C68B4C300B9355C /* MyTracks */ = {
+			isa = PBXGroup;
+			children = (
+				CE4602252C68B4DC00B9355C /* MyTracksViewController.swift */,
+			);
+			path = MyTracks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,8 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4601F22C64D58200B9355C /* ViewController.swift in Sources */,
+				CE4602262C68B4DC00B9355C /* MyTracksViewController.swift in Sources */,
 				CE4602132C64DD9A00B9355C /* SearchView.swift in Sources */,
+				CE4602232C68B0EC00B9355C /* TabBarController.swift in Sources */,
 				CE4601EE2C64D58200B9355C /* AppDelegate.swift in Sources */,
 				CE4602212C6786A800B9355C /* NetworkManager.swift in Sources */,
 				CE46021A2C64E33900B9355C /* Music.swift in Sources */,
