@@ -25,7 +25,7 @@ final class SearchView: UIView {
         $0.backgroundColor = .clear
         $0.separatorStyle = .none
         $0.showsVerticalScrollIndicator = true
-        $0.rowHeight = 270
+        $0.rowHeight = 260
     }
     
     override init(frame: CGRect) {

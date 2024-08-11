@@ -37,7 +37,6 @@ extension SearchViewModel {
                 print(searchText)
                 return NetworkManager.requestSearchItunes(keyword: searchText) //Observable<Music>
             }
-            .debug("3")
             .subscribe(with: self) { owner, music in
                 print("Next: \(music.results)") //[MusicInfo]
                 musicInfoList.onNext(music.results)

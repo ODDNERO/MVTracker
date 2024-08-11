@@ -22,11 +22,10 @@ final class SearchTableViewCell: UITableViewCell {
         $0.clipsToBounds = true
     }
     let titleLabel = UILabel().then {
-//        $0.textColor = .systemPink
-        $0.textColor = .black
+        $0.textColor = .systemPink
+//        $0.textColor = .black
         $0.textAlignment = .left
-//        $0.font = .systemFont(ofSize: 15, weight: .semibold)
-        $0.font = .systemFont(ofSize: 15, weight: .medium)
+        $0.font = .systemFont(ofSize: 14, weight: .medium)
         $0.backgroundColor = .white.withAlphaComponent(0.95)
         $0.layer.cornerRadius = 12
         $0.clipsToBounds = true
@@ -34,7 +33,7 @@ final class SearchTableViewCell: UITableViewCell {
     let artistLabel = UILabel().then {
         $0.textColor = .systemGray
         $0.textAlignment = .left
-        $0.font = .systemFont(ofSize: 15, weight: .regular)
+        $0.font = .systemFont(ofSize: 14, weight: .regular)
     }
     let timeLabel = UILabel().then {
         $0.textColor = .white
@@ -78,7 +77,7 @@ extension SearchTableViewCell {
         likeButton.tintColor = isLike ? .systemPink : .systemPink.withAlphaComponent(0.5)
     }
     
-    func formatTime(millis: Int) -> String {
+    private func formatTime(millis: Int) -> String {
         let totalSeconds = millis / 1000
         let minutes = totalSeconds / 60
         let seconds = totalSeconds % 60
@@ -96,23 +95,23 @@ extension SearchTableViewCell {
         
         musicVideoImageView.snp.makeConstraints {
             $0.top.equalTo(contentView).inset(10)
-            $0.top.horizontalEdges.equalTo(contentView).inset(20)
+            $0.top.horizontalEdges.equalTo(contentView).inset(15)
             $0.height.equalTo(220)
         }
         artistLabel.snp.makeConstraints {
-            $0.centerY.equalTo(likeButton).offset(1)
-            $0.leading.equalTo(contentView).inset(30)
+            $0.centerY.equalTo(likeButton).offset(2)
+            $0.leading.equalTo(contentView).inset(25)
             $0.trailing.equalTo(likeButton.snp.leading).offset(-10)
         }
         likeButton.snp.makeConstraints {
-            $0.top.equalTo(musicVideoImageView.snp.bottom).offset(5)
-            $0.trailing.equalTo(contentView).inset(25)
+            $0.top.equalTo(musicVideoImageView.snp.bottom).offset(3)
+            $0.trailing.equalTo(contentView).inset(20)
             $0.size.equalTo(30)
         }
         
         titleLabel.snp.makeConstraints {
             $0.top.leading.equalTo(musicVideoImageView).inset(10)
-            $0.height.equalTo(24)
+            $0.height.equalTo(22)
         }
         timeLabel.snp.makeConstraints {
             $0.bottom.trailing.equalTo(musicVideoImageView).inset(12)
