@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 final class SearchViewController: UIViewController {
     private let viewModel = SearchViewModel()
@@ -35,8 +36,10 @@ extension SearchViewController {
                                           cancleButtonTap: contentView.searchController.searchBar.rx.cancelButtonClicked)
         let output = viewModel.transform(input)
         
-        output.musicInfoList
-            .bind(to: contentView.tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) {
+        let musicInfoList = output.musicInfoList.asDriver(onErrorJustReturn: [])
+        
+        musicInfoList
+            .drive(contentView.tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) {
                 (row, element, cell) in
                 cell.setupData(element)
                 
@@ -47,10 +50,27 @@ extension SearchViewController {
                         cell.setupLikeButton(temporaryBool) //임시
                     }
                     .disposed(by: cell.disposeBag)
-                
             }.disposed(by: disposeBag)
         
+        //MARK: - Cancel Button 클릭 -> 뮤직비디오 재생 중지 & 리소스 정리 구현 중
+//        musicInfoList
+//            .drive(with: self) { owner, musicInfoList in
+//                if musicInfoList.isEmpty {
+//                    for case let cell as SearchTableViewCell in owner.contentView.tableView.visibleCells {
+//                        cell.stopVideo()
+//                    }
+//                }
+//            }
+//            .disposed(by: disposeBag)
+        
+//        contentView.searchController.searchBar.rx.cancelButtonClicked
+//            .bind(with: self) { owner, _ in
+//                for case let cell as SearchTableViewCell in owner.contentView.tableView.visibleCells {
+//                    print("stopVideo 직전까지 실행됨") //MARK: 실행 안 됨
+//                    cell.stopVideo()
+//                }
+//            }
+//            .disposed(by: disposeBag)
         
     }
 }
-//}

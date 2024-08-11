@@ -63,11 +63,8 @@ final class SearchTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        stopVideo()
         disposeBag = DisposeBag()
-        player?.pause()
-        playerLayer?.removeFromSuperlayer()
-        player = nil
-        playerLayer = nil
     }
 }
 
@@ -98,7 +95,7 @@ extension SearchTableViewCell {
     
     private func playVideo(url: URL) {
         player = AVPlayer(url: url)
-        player?.volume = 0
+        player?.volume = 0 //리소스 정리 테스트 시 주석 처리
         playerLayer = AVPlayerLayer(player: player)
         playerLayer?.frame = musicVideoImageView.bounds
         playerLayer?.videoGravity = .resizeAspectFill
@@ -107,6 +104,14 @@ extension SearchTableViewCell {
             musicVideoImageView.layer.insertSublayer(playerLayer, at: 0)
         }
         player?.play()
+    }
+    
+    func stopVideo() {
+        print("stopVideo 실행됨")
+        player?.pause()
+        player = nil
+        playerLayer?.removeFromSuperlayer()
+        playerLayer = nil
     }
 }
 
