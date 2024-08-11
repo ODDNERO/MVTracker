@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RxSwift
 import SnapKit
 
 final class MyTracksViewController: UIViewController {
-    let tableView = UITableView().then {
+    private let viewModel = SearchViewModel()
+    private let disposeBag = DisposeBag()
+    
+    private let tableView = UITableView().then {
         $0.register(TrackTableViewCell.self, forCellReuseIdentifier: TrackTableViewCell.identifier)
         $0.backgroundColor = .clear
         $0.separatorStyle = .none
