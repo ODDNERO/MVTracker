@@ -25,6 +25,7 @@
 		CE4602212C6786A800B9355C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602202C6786A800B9355C /* NetworkManager.swift */; };
 		CE4602232C68B0EC00B9355C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602222C68B0EC00B9355C /* TabBarController.swift */; };
 		CE4602262C68B4DC00B9355C /* MyTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602252C68B4DC00B9355C /* MyTracksViewController.swift */; };
+		CE4602292C68DBFF00B9355C /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602282C68DBFF00B9355C /* TrackDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		CE4602202C6786A800B9355C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CE4602222C68B0EC00B9355C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CE4602252C68B4DC00B9355C /* MyTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTracksViewController.swift; sourceTree = "<group>"; };
+		CE4602282C68DBFF00B9355C /* TrackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				CE4602222C68B0EC00B9355C /* TabBarController.swift */,
 				CE46021B2C64E34400B9355C /* Network */,
 				CE4602142C64DDA300B9355C /* Search */,
+				CE4602272C68DBE600B9355C /* TrackDetail */,
 				CE4602242C68B4C300B9355C /* MyTracks */,
 				CE4601F62C64D58400B9355C /* Assets.xcassets */,
 				CE4601F82C64D58400B9355C /* LaunchScreen.storyboard */,
@@ -119,6 +122,14 @@
 				CE4602252C68B4DC00B9355C /* MyTracksViewController.swift */,
 			);
 			path = MyTracks;
+			sourceTree = "<group>";
+		};
+		CE4602272C68DBE600B9355C /* TrackDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE4602282C68DBFF00B9355C /* TrackDetailViewController.swift */,
+			);
+			path = TrackDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 			files = (
 				CE4602262C68B4DC00B9355C /* MyTracksViewController.swift in Sources */,
 				CE4602182C64E1D800B9355C /* SearchViewModel.swift in Sources */,
+				CE4602292C68DBFF00B9355C /* TrackDetailViewController.swift in Sources */,
 				CE4602132C64DD9A00B9355C /* SearchView.swift in Sources */,
 				CE4601F22C64D58200B9355C /* SearchViewController.swift in Sources */,
 				CE4602232C68B0EC00B9355C /* TabBarController.swift in Sources */,

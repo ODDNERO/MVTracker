@@ -23,6 +23,7 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "뮤직비디오 검색"
         navigationItem.backButtonTitle = ""
+        
         navigationItem.searchController = contentView.searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         bind()
@@ -72,5 +73,15 @@ extension SearchViewController {
 //            }
 //            .disposed(by: disposeBag)
         
+        Observable.zip(
+            contentView.tableView.rx.modelSelected(MusicInfo.self),
+            contentView.tableView.rx.itemSelected
+        ).debug("TableView Selected")
+            .map { $0.0 }
+            .subscribe(with: self) { owner, musicInfo in
+                let detailVC = TrackDetailViewController(musicInfo)
+                detailVC.hidesBottomBarWhenPushed = true
+                owner.navigationController?.pushViewController(detailVC, animated: true)
+            }.disposed(by: disposeBag)
     }
 }
