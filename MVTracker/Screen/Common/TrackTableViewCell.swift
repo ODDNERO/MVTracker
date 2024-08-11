@@ -12,7 +12,7 @@ import SnapKit
 import Then
 import AVFoundation
 
-final class SearchTableViewCell: UITableViewCell {
+final class TrackTableViewCell: UITableViewCell {
     static let identifier = "SearchTableViewCell"
     var disposeBag = DisposeBag()
     
@@ -68,7 +68,7 @@ final class SearchTableViewCell: UITableViewCell {
     }
 }
 
-extension SearchTableViewCell {
+extension TrackTableViewCell {
     func setupData(_ data: MusicInfo) {
         titleLabel.text = "  \(data.trackName)  "
         artistLabel.text = "- \(data.artistName)"
@@ -115,7 +115,7 @@ extension SearchTableViewCell {
     }
 }
 
-extension SearchTableViewCell {
+extension TrackTableViewCell {
     private func configureView() {
         self.selectionStyle = .none
         

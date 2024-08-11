@@ -40,7 +40,7 @@ extension SearchViewController {
         let musicInfoList = output.musicInfoList.asDriver(onErrorJustReturn: [])
         
         musicInfoList
-            .drive(contentView.tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) {
+            .drive(contentView.tableView.rx.items(cellIdentifier: TrackTableViewCell.identifier, cellType: TrackTableViewCell.self)) {
                 (row, element, cell) in
                 cell.setupData(element)
                 

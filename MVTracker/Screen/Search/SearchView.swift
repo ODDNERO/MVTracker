@@ -21,7 +21,7 @@ final class SearchView: UIView {
     }
     
     let tableView = UITableView().then {
-        $0.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
+        $0.register(TrackTableViewCell.self, forCellReuseIdentifier: TrackTableViewCell.identifier)
         $0.backgroundColor = .clear
         $0.separatorStyle = .none
         $0.showsVerticalScrollIndicator = true
