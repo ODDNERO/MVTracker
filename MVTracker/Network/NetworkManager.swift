@@ -15,42 +15,37 @@ enum APIError: Error {
 }
 
 struct NetworkManager {
-    static func requestSearchItunes(keyword: String) -> Observable<Music> {
+    static func requestSearchItunes(keyword: String) -> Single<Music> {
         let url = "https://itunes.apple.com/search?term=\(keyword)&entity=musicVideo"
         
-        let resultObservable = Observable<Music>.create { observer in
+        let resultSingle = Single<Music>.create { observer in
             guard let url = URL(string: url) else {
-                observer.onError(APIError.invalidURL)
+                observer(.failure(APIError.invalidURL))
                 return Disposables.create()
             }
             
             URLSession.shared.dataTask(with: url) { data, response, error in
-                if let error { observer.onError(APIError.unknownResponse) }
+                if let error { observer(.failure(APIError.unknownResponse)) }
                 
                 guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                    observer.onError(APIError.statusError)
-                    return
+                    observer(.failure(APIError.statusError))
                 }
                 
-                guard let data else {
-                    observer.onError(APIError.unknownResponse)
-                    return
-                }
+                guard let data else { observer(.failure(APIError.unknownResponse)) }
                 
                 do {
                     let musicData = try JSONDecoder().decode(Music.self, from: data)
-                    observer.onNext(musicData)
-                    observer.onCompleted()
+                    observer(.success(musicData))
                 } catch {
                     print("응답 O, 디코딩 실패")
                     print(error)
-                    observer.onError(APIError.unknownResponse)
+                    observer(.failure(APIError.unknownResponse))
                 }
             }.resume()
             return Disposables.create()
             
-        }.catch { _ in return Observable.empty() }
+        }.catch { error in Single.never() }
         
-        return resultObservable
+        return resultSingle
     }
 }

@@ -35,7 +35,7 @@ extension SearchViewModel {
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .flatMap { searchText in
                 print(searchText)
-                return NetworkManager.requestSearchItunes(keyword: searchText) //Observable<Music>
+                return NetworkManager.requestSearchItunes(keyword: searchText) //Single<Music>
             }
             .subscribe(with: self) { owner, music in
                 print("Next: \(music.results)") //[MusicInfo]
@@ -48,7 +48,7 @@ extension SearchViewModel {
                 print("Disposed")
             }.disposed(by: disposeBag)
         
-        input.cancleButtonTap
+        input.cancelButtonTap
             .map { [] }
             .bind(to: musicInfoList)
             .disposed(by: disposeBag)
