@@ -29,6 +29,7 @@
 		CE4602302C691A3B00B9355C /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46022F2C691A3B00B9355C /* Track.swift */; };
 		CE4602332C691A9A00B9355C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE4602322C691A9A00B9355C /* RealmSwift */; };
 		CE4602352C691BF800B9355C /* TrackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602342C691BF800B9355C /* TrackRepository.swift */; };
+		CE4602442C6A4AA700B9355C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4602432C6A4AA700B9355C /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		CE46022C2C690ADD00B9355C /* MyTracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTracksViewModel.swift; sourceTree = "<group>"; };
 		CE46022F2C691A3B00B9355C /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		CE4602342C691BF800B9355C /* TrackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRepository.swift; sourceTree = "<group>"; };
+		CE4602432C6A4AA700B9355C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				CE4601ED2C64D58200B9355C /* AppDelegate.swift */,
 				CE4601EF2C64D58200B9355C /* SceneDelegate.swift */,
 				CE46022E2C691A2400B9355C /* Database */,
+				CE4602422C6A48CA00B9355C /* Util */,
 				CE46021B2C64E34400B9355C /* Network */,
 				CE46022A2C69082B00B9355C /* Screen */,
 				CE4601F62C64D58400B9355C /* Assets.xcassets */,
@@ -163,6 +166,14 @@
 				CE4602342C691BF800B9355C /* TrackRepository.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		CE4602422C6A48CA00B9355C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CE4602432C6A4AA700B9355C /* BaseViewModel.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 				CE4601EE2C64D58200B9355C /* AppDelegate.swift in Sources */,
 				CE4602212C6786A800B9355C /* NetworkManager.swift in Sources */,
 				CE46021A2C64E33900B9355C /* Music.swift in Sources */,
+				CE4602442C6A4AA700B9355C /* BaseViewModel.swift in Sources */,
 				CE4602302C691A3B00B9355C /* Track.swift in Sources */,
 				CE4601F02C64D58200B9355C /* SceneDelegate.swift in Sources */,
 				CE4602162C64DFC400B9355C /* TrackTableViewCell.swift in Sources */,

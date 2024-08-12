@@ -10,9 +10,9 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 
-final class MyTracksViewModel {
+final class MyTracksViewModel: BaseViewModel {
     private let repository = TrackRepository()
-    private let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     
     struct Input {
         let trackData: MusicInfo
