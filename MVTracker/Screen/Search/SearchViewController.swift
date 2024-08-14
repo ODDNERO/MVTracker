@@ -34,7 +34,7 @@ extension SearchViewController {
     func bind() {
         let input = SearchViewModel.Input(searchText: contentView.searchController.searchBar.rx.text,
                                           searchButtonTap: contentView.searchController.searchBar.rx.searchButtonClicked,
-                                          cancleButtonTap: contentView.searchController.searchBar.rx.cancelButtonClicked)
+                                          cancelButtonTap: contentView.searchController.searchBar.rx.cancelButtonClicked,
         let output = viewModel.transform(input)
         
         let musicInfoList = output.musicInfoList.asDriver(onErrorJustReturn: [])

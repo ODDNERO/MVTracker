@@ -15,7 +15,7 @@ final class SearchViewModel: BaseViewModel {
     struct Input {
         let searchText: ControlProperty<String?>
         let searchButtonTap: ControlEvent<Void>
-        let cancleButtonTap: ControlEvent<Void>
+        let cancelButtonTap: ControlEvent<Void>
     }
     struct Output {
         let musicInfoList: PublishSubject<[MusicInfo]>
